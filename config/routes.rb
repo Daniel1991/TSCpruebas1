@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   devise_for :clientes
   
-  match '/inicio' => 'pages#inicio'
-  match '/portafolio' => 'pages#portafolio'
-  match '/nosotros' => 'pages#nosotros'
-  match '/ayuda' => 'pages#ayuda'
-  match '/contacto' => 'pages#contacto'
+  match '/inicio', to: 'pages#inicio', via: 'get'
+  match '/portafolio', to: 'pages#portafolio', via: 'get'
+  match '/nosotros', to: 'pages#nosotros', via: 'get'
+  match '/ayuda', to: 'pages#ayuda', via: 'get'
+  match '/contacto', to: 'pages#contacto', via: 'get'
   
   root :to => 'pages#inicio'
+  
+  resources :clientes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
