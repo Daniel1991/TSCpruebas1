@@ -45,3 +45,9 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+
+gem 'simple_form'
+
+gem 'twitter-bootstrap-rails'
+
+gem 'less-rails'
