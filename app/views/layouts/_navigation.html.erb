@@ -8,21 +8,23 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-       <!-- <a href="#" class="navbar-brand">Technical Solution Center</a> -->
-           <%= link_to 'Technical Solution Center', root_path, class: 'navbar-brand' %>
+        <%= link_to 'Technical Solution Center', root_path, class: 'navbar-brand' %>
       </div>
 
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'inicio', root_path %></li>
+          <% if current_cliente %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+            
             <ul class="dropdown-menu">
-              <li><a href="servicios.html">Solicitar Servicios</a></li>
+              <li><%= link_to "Solicitar Servicios", new_servicio_path %> </li>
               <li><a href="cotizacion.html">Solicitar cotización</a></li>
-              <li><%= link_to 'portafolio', root_path %></li>
+              <li><a href="portafolio.html">Portafolio</a></li>
             </ul>
           </li>
+          <% end %>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="ayuda.html">Ayuda</a></li>
           <li><a href="contacto.html">Contacto</a></li>
@@ -33,7 +35,23 @@
               <li><%= link_to "Registrarse", new_cliente_registration_path %> </li>
               <li><%= link_to "Iniciar Sesión", new_cliente_session_path %> </li>
           <% end %>
+          <% if current_cliente %>
+          <button type="button" class="navbar-toggle toggle-right" data-toggle="sidebar" data-target=".sidebar-right">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <% end %>
         </ul>
       </div>
+
     </div>
   </div>
+
+<div class="col-xs-7 col-sm-3 col-md-3 sidebar sidebar-right sidebar-animate">
+        <ul class="nav navbar-stacked">
+          <li class="active"><a href="#">Mis solicitudes</a></li>
+          <li><%= link_to "Cambiar contraseña", edit_cliente_password_path %></li>
+          <li><a href="#">Editar Perfil</a></li>
+        </ul>
+      </div>

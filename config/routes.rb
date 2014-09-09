@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :servicios
+
+  resources :tipo_servicios
+
   devise_for :clientes
   
   match '/inicio', to: 'pages#inicio', via: 'get'
