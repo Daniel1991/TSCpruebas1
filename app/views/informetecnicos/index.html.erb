@@ -1,0 +1,61 @@
+<h1>Listing informetecnicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fechaingreso</th>
+      <th>Hora</th>
+      <th>Cedulanit</th>
+      <th>Nombreempresa</th>
+      <th>Telefono</th>
+      <th>Direccion</th>
+      <th>Nombretecnico</th>
+      <th>Garantia</th>
+      <th>Servicio</th>
+      <th>Facturable</th>
+      <th>Valor</th>
+      <th>Dispositivo</th>
+      <th>Marcamodelo</th>
+      <th>Serialid</th>
+      <th>Descripcion</th>
+      <th>Fechasalida</th>
+      <th>Horasalida</th>
+      <th>Nombreusuario</th>
+      <th>Problema</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @informetecnicos.each do |informetecnico| %>
+      <tr>
+        <td><%= informetecnico.fechaingreso %></td>
+        <td><%= informetecnico.hora %></td>
+        <td><%= informetecnico.cedulanit %></td>
+        <td><%= informetecnico.nombreempresa %></td>
+        <td><%= informetecnico.telefono %></td>
+        <td><%= informetecnico.direccion %></td>
+        <td><%= informetecnico.nombretecnico %></td>
+        <td><%= informetecnico.garantia %></td>
+        <td><%= informetecnico.servicio %></td>
+        <td><%= informetecnico.facturable %></td>
+        <td><%= informetecnico.valor %></td>
+        <td><%= informetecnico.dispositivo %></td>
+        <td><%= informetecnico.marcamodelo %></td>
+        <td><%= informetecnico.serialid %></td>
+        <td><%= informetecnico.descripcion %></td>
+        <td><%= informetecnico.fechasalida %></td>
+        <td><%= informetecnico.horasalida %></td>
+        <td><%= informetecnico.nombreusuario %></td>
+        <td><%= informetecnico.problema %></td>
+        <td><%= link_to 'Show', informetecnico %></td>
+        <td><%= link_to 'Edit', edit_informetecnico_path(informetecnico) %></td>
+        <td><%= link_to 'Destroy', informetecnico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Informetecnico', new_informetecnico_path %>

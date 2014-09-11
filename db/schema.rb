@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909183007) do
+ActiveRecord::Schema.define(version: 20140911010723) do
 
   create_table "clientes", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +34,34 @@ ActiveRecord::Schema.define(version: 20140909183007) do
 
   add_index "clientes", ["email"], name: "index_clientes_on_email", unique: true
   add_index "clientes", ["reset_password_token"], name: "index_clientes_on_reset_password_token", unique: true
+
+  create_table "informetecnicos", force: true do |t|
+    t.date     "fechaingreso"
+    t.time     "hora"
+    t.string   "cedulanit"
+    t.string   "nombreempresa"
+    t.string   "telefono"
+    t.string   "direccion"
+    t.string   "nombretecnico"
+    t.boolean  "garantia"
+    t.boolean  "servicio"
+    t.boolean  "facturable"
+    t.string   "valor"
+    t.string   "dispositivo"
+    t.string   "marcamodelo"
+    t.string   "serialid"
+    t.integer  "problema_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "informetecnicos", ["problema_id"], name: "index_informetecnicos_on_problema_id"
+
+  create_table "problemas", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "servicios", force: true do |t|
     t.date     "fecha"

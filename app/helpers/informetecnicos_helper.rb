@@ -1,0 +1,2 @@
+module InformetecnicosHelper
+end

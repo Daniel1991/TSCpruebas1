@@ -8,11 +8,11 @@
   <dd><%= @tipo_servicio.nombre %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
+<%= link_to t('.atras', :default => t("helpers.links.atras")),
               tipo_servicios_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
+<%= link_to t('.editar', :default => t("helpers.links.editar")),
               edit_tipo_servicio_path(@tipo_servicio), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+<%= link_to t('.eliminar', :default => t("helpers.links.eliminar")),
               tipo_servicio_path(@tipo_servicio),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },

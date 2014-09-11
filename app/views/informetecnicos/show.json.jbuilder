@@ -1,0 +1,1 @@
+json.extract! @informetecnico, :id, :fechaingreso, :hora, :cedulanit, :nombreempresa, :telefono, :direccion, :nombretecnico, :garantia, :servicio, :facturable, :valor, :dispositivo, :marcamodelo, :serialid, :descripcion, :fechasalida, :horasalida, :nombreusuario, :problema_id, :created_at, :updated_at

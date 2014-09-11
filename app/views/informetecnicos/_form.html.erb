@@ -1,0 +1,29 @@
+<%= simple_form_for(@informetecnico) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :fechaingreso %>
+    <%= f.input :hora %>
+    <%= f.input :cedulanit %>
+    <%= f.input :nombreempresa %>
+    <%= f.input :telefono %>
+    <%= f.input :direccion %>
+    <%= f.input :nombretecnico %>
+    <%= f.input :garantia %>
+    <%= f.input :servicio %>
+    <%= f.input :facturable %>
+    <%= f.input :valor %>
+    <%= f.input :dispositivo %>
+    <%= f.input :marcamodelo %>
+    <%= f.input :serialid %>
+    <%= f.input :descripcion %>
+    <%= f.input :fechasalida %>
+    <%= f.input :horasalida %>
+    <%= f.input :nombreusuario %>
+    <%= f.association :problema %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

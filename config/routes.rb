@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :informetecnicos
+
+  resources :problemas
+
   resources :servicios
 
   resources :tipo_servicios
