@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911010723) do
+ActiveRecord::Schema.define(version: 20140911011312) do
 
   create_table "clientes", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(version: 20140911010723) do
     t.string   "dispositivo"
     t.string   "marcamodelo"
     t.string   "serialid"
+    t.text     "descripcion"
+    t.date     "fechasalida"
+    t.time     "horasalida"
+    t.string   "nombreusuario"
     t.integer  "problema_id"
     t.datetime "created_at"
     t.datetime "updated_at"
