@@ -1,31 +1,59 @@
-<h2>Gestionar mi cuenta </h2> <!-- <%= resource_name.to_s.humanize %> -->
+<div class="container">
+
+<ol class="breadcrumb">
+			<li><%= link_to "Inicio", root_path %></li>
+			<li class="active">Gestión de cuenta</li>
+		</ol>
+
+<article class="col-xs-12 maincontent">
+  <header class="page-header">
+					<h1 class="page-title">Gestionar mi cuenta</h1>
+				</header>
+  
+  <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Cambiar y actualizar datos</h3>
+							<hr><!-- <%= resource_name.to_s.humanize %> -->
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div class="top-margin" ALIGN=center><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-    <div><%= f.label :Contraseña %> <i>(Dejar en blanco si no desea cambiarla)</i><br />
+    <div class="top-margin" ALIGN=center><%= f.label :Contraseña %> <i>(Dejar en blanco si no desea cambiarla)</i><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
-    <div><%= f.label :confirmar_contraseña %><br />
+    <div class="top-margin" ALIGN=center><%= f.label :confirmar_contraseña %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-<div><%= f.label :contraseña_actual %> <i>(Necesitamos tu contraseña actual para confirmar los cambios)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
+    <div class="top-margin" ALIGN=center><%= f.label :contraseña_actual %><br /> <i>(Necesitamos tu contraseña actual para confirmar los cambios)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %></div><br />
 
-  <div><%= f.submit "Actualizar" %></div>
+  <div ALIGN=center><%= f.submit "Actualizar" %></div>
 <% end %>
 
 <hr/>
 
-<h3>Cancelar mi cuenta</h3>
+<h3 class="thin text-center">Cancelar mi cuenta</h3>
+<hr />
 
-<p>¿No eres feliz? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "¿Estas seguro?" }, method: :delete %></p>
+<p ALIGN=center>¿No eres feliz?</p> 
+              
+<div class="top-margin" ALIGN=center><%= button_to "Cancelar mi cuenta", registration_path(resource_name), class: "btn btn-danger btn-xl", data: { confirm: "¿Estas seguro?" }, method: :delete %></div><br />
 
 <%= link_to "Atras", :back %>
+              
+             </div>
+					</div>
+
+				</div>
+				
+</article>
+
+</div>

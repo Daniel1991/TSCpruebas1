@@ -1,18 +1,44 @@
-<h2>Registrarse</h2>
+<div class="container">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<ol class="breadcrumb">
+			<li><%= link_to "Inicio", root_path %></li>
+			<li class="active">Registrarse</li>
+		</ol>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+<article class="col-xs-12 maincontent">
+  <header class="page-header">
+					<h1 class="page-title">Registrarme</h1>
+				</header>
+  
+  <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Registrar una nueva cuenta</h3>
+							<hr>
 
-<div><%= f.label :contraseña %> <% if @validatable %><i>(minimo <%= @minimum_password_length %> caracteres)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
 
-<div><%= f.label :confirmar_contraseña %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+                <div  class="top-margin" ALIGN=center><%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true %></div>
 
-<div><%= f.submit "Registrarme" %></div>
-<% end %>
+              <div  class="top-margin" ALIGN=center><%= f.label :contraseña %> <% if @validatable %><i>(minimo <%= @minimum_password_length %> caracteres)</i><% end %><br />
+                  <%= f.password_field :password, autocomplete: "off" %></div>
 
-<%= render "devise/shared/links" %>
+              <div  class="top-margin" ALIGN=center><%= f.label :confirmar_contraseña %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "off" %></div><br />
+
+              <div ALIGN=center><%= f.submit "Registrarme" %></div>
+              <% end %>
+
+              <%= render "devise/shared/links" %>
+              
+              						</div>
+					</div>
+
+				</div>
+				
+</article>
+			<!-- /Article -->
+
+		</div>
