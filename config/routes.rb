@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   devise_for :clientes
   
+  resources :clientes do
+    resources :servicios
+  end
+  
   match '/inicio', to: 'pages#inicio', via: 'get'
   match '/portafolio', to: 'pages#portafolio', via: 'get'
   match '/nosotros', to: 'pages#nosotros', via: 'get'
@@ -20,7 +24,7 @@ Rails.application.routes.draw do
   
   root :to => 'pages#inicio'
   
-  resources :clientes
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
