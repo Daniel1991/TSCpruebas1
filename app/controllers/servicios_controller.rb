@@ -10,6 +10,7 @@ class ServiciosController < ApplicationController
   # GET /servicios/1
   # GET /servicios/1.json
   def show
+    @Servicio = Servicio.find(params[:id])
   end
 
   # GET /servicios/new
@@ -28,7 +29,7 @@ class ServiciosController < ApplicationController
 
     respond_to do |format|
       if @servicio.save
-        format.html { redirect_to @servicio, notice: 'Servicio was successfully created.' }
+        format.html { redirect_to @servicio, notice: 'Su Solicitud ha sido enviada.' }
         format.json { render :show, status: :created, location: @servicio }
       else
         format.html { render :new }
@@ -56,7 +57,7 @@ class ServiciosController < ApplicationController
   def destroy
     @servicio.destroy
     respond_to do |format|
-      format.html { redirect_to servicios_url, notice: 'Servicio was successfully destroyed.' }
+      format.html { redirect_to servicios_url, notice: 'Este servicio se ha cancelado.' }
       format.json { head :no_content }
     end
   end

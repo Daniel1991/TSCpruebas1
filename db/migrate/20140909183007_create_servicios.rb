@@ -11,6 +11,7 @@ class CreateServicios < ActiveRecord::Migration
       t.references :tipoServicio, index: true
       t.string :disponibilidad
       t.text :descripcion
+      t.references :cliente, index: true # puede que se tenga que eliminar
 
       t.timestamps
     end
