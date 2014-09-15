@@ -26,6 +26,7 @@ class ServiciosController < ApplicationController
   # POST /servicios.json
   def create
     @servicio = Servicio.new(servicio_params)
+    @servicio.cliente = current_cliente
 
     respond_to do |format|
       if @servicio.save
