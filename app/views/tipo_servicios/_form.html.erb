@@ -1,8 +1,17 @@
 <%= simple_form_for @tipo_servicio, :html => { :class => 'form-horizontal' } do |f| %>
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="panel panel-default">
+		<div class="panel-body">
+	
+<div class="top-margin" align= left>
   <%= f.input :nombre %>
   <%= error_span(@tipo_servicio[:nombre]) %>
-
+</div><br />
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancelar', :default => t("helpers.links.cancelar")),
                 tipo_servicios_path, :class => 'btn btn-default' %>
 <% end %>
+
+    </div>
+  </div>
+</div>
