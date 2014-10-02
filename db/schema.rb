@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914155444) do
+ActiveRecord::Schema.define(version: 20140923194610) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -118,6 +118,12 @@ ActiveRecord::Schema.define(version: 20140914155444) do
     t.datetime "updated_at"
   end
 
+  create_table "proyectos", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "servicios", force: true do |t|
     t.date     "fecha"
     t.integer  "pedidoN"
@@ -136,6 +142,16 @@ ActiveRecord::Schema.define(version: 20140914155444) do
 
   add_index "servicios", ["cliente_id"], name: "index_servicios_on_cliente_id"
   add_index "servicios", ["tipoServicio_id"], name: "index_servicios_on_tipoServicio_id"
+
+  create_table "tareas", force: true do |t|
+    t.integer  "proyecto_id"
+    t.integer  "admin_user_id"
+    t.string   "nombre"
+    t.boolean  "estado"
+    t.date     "fecha_limite"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tipo_servicios", force: true do |t|
     t.string   "nombre"

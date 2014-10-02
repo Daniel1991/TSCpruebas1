@@ -3,7 +3,7 @@
 			<li class="active">Solicitar Servicios</li>
 </ol>
 <article class="col-xs-12 maincontent">
-<div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-2">
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h3 class="thin text-center">Solicitud de Servicios</h3>
@@ -11,32 +11,53 @@
 
 <%= simple_form_for @servicio, :html => { :class => 'form-horizontal' } do |f| %>
 <div class="row">
-  <div class="top-margin col-sm-8">  <%= f.input :fecha %>
-    <%= error_span(@servicio[:fecha]) %></div>
-  <div class="top-margin col-sm-4">  <%= f.input :pedidoN %>
-    <%= error_span(@servicio[:pedidoN]) %></div>
+  <div class=" col-sm-8">  
+    <div class=" form-group"> 
+      <%= f.input :fecha %>
+      <%= error_span(@servicio[:fecha]) %></div>
+    </div>
+  </div>
+  <div class="col-sm-4">  
+    <div class="form-group">
+      <%= f.input :pedidoN, class: "form-control" %><br />
+      <%= error_span(@servicio[:pedidoN]) %>
+    </div>
+  </div>
 </div>
               
 <div class="row">
-  <div class="top-margin col-md-6">  <%= f.input :nombre %>
-    <%= error_span(@servicio[:nombre]) %></div>
-  <div class="top-margin col-md-6">  <%= f.input :identificacion %>
-    <%= error_span(@servicio[:identificacion]) %></div>
+  <div class="col-md-6">  <%= f.input :nombre %>
+    <%= error_span(@servicio[:nombre]) %></div><br />
+  <div class="col-md-6">  <%= f.input :identificacion %>
+    <%= error_span(@servicio[:identificacion]) %></div><br />
+  
 </div>
-<div class="row">
-<div class="top-margin col-sm-4">  <%= f.input :email %>
-  <%= error_span(@servicio[:email]) %></div>
-<div class="top-margin col-sm-4">  <%= f.input :direccion %>
-  <%= error_span(@servicio[:direccion]) %></div>
-<div class="top-margin col-sm-4">  <%= f.input :telefono %>
-  <%= error_span(@servicio[:telefono]) %></div><br>
+<div class="row"><br />
+  <div class="col-sm-4">  
+    <div class="form-group">
+      <%= f.input :email, class: "form-control" %>
+      <%= error_span(@servicio[:email]) %>
+    </div>
+  </div>
+  <div class="col-sm-4"> 
+    <div class="form-group">
+      <%= f.input :direccion, class: "form-control" %>
+      <%= error_span(@servicio[:direccion]) %>
+    </div>
+  </div>
+  <div class=" col-sm-4">  
+    <div class="form-group">
+      <%= f.input :telefono, class: "form-control" %>
+      <%= error_span(@servicio[:telefono]) %>
+    </div>
+  </div>
 </div>
-<div class="row">
-  <div class='top-margin col-sm-6'>
-    <%= f.label :tipoServicio %>
+<div class="row"><br />
+  <div class='col-sm-6'>
+    <%= f.label :tipo_de_Servicio %>
     <%= f.collection_select :tipoServicio_id, TipoServicio.all, :id, :nombre, class: "form-group", prompt: "Seleccione un servicio" %>
   </div>
-<div class='top-margin col-sm-6'>
+<div class='col-sm-6'>
   <%= f.label :disponibilidad %>
      <div class='form-group'>
        <select class="form-control" required="true">

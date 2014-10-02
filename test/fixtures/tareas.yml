@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  proyecto_id: 1
+  admin_user_id: 1
+  nombre: MyString
+  estado: false
+  fecha_limite: 2014-09-23
+
+two:
+  proyecto_id: 1
+  admin_user_id: 1
+  nombre: MyString
+  estado: false
+  fecha_limite: 2014-09-23
